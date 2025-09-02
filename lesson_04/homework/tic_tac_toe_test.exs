@@ -29,11 +29,32 @@ defmodule Test do
   end
 
   test "check_who_win test" do
-    assert {:win, :x} == check_who_win({{:x, :x, :x}, {:f, :f, :o}, {:f, :f, :o}})
-    assert {:win, :o} == check_who_win({{:f, :x, :f}, {:o, :o, :o}, {:x, :f, :f}})
-    assert {:win, :x} == check_who_win({{:f, :o, :f}, {:o, :f, :f}, {:x, :x, :x}})
+    assert {:win, :x} == check_who_win(
+      {
+      {:x, :x, :x},
+      {:f, :f, :o},
+      {:f, :f, :o}
+      }
+    )
+    assert {:win, :o} == check_who_win({
+      {:f, :x, :f},
+      {:o, :o, :o},
+      {:x, :f, :f}
+      }
+    )
+    assert {:win, :x} == check_who_win({
+      {:f, :o, :f},
+      {:o, :f, :f},
+      {:x, :x, :x}
+      }
+    )
 
-    assert {:win, :o} == check_who_win({{:o, :x, :f}, {:o, :f, :x}, {:o, :f, :f}})
+    assert {:win, :o} == check_who_win({
+      {:o, :x, :f},
+      {:o, :f, :x},
+      {:o, :f, :f}
+      }
+    )
     assert {:win, :x} == check_who_win({{:f, :x, :o}, {:o, :x, :f}, {:f, :x, :f}})
     assert {:win, :o} == check_who_win({{:f, :x, :o}, {:f, :x, :o}, {:f, :f, :o}})
 

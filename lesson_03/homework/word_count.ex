@@ -21,7 +21,11 @@ defmodule WordCount do
   {2, 4, 20}
   """
   def count(data) do
-    # TODO add your implementation
+    {
+      String.split(data, "\n") |> length,
+      String.split(data) |> length,
+      String.length(data)
+    }   
   end
 
 end
